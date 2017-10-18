@@ -1,11 +1,18 @@
 .left{
-	background-color: aquamarine;
+	background-color: black;
+	color: grey;
 	position: fixed;
 	width: 50%;
 	height: 100%;
 	top: 0;
 	left: 0;
 }
+
+.interface {
+	text-align: center;
+	padding: 200px 20px 20px 20px;
+}
+
 
 .right{
 	background-color: aliceblue;
@@ -17,9 +24,9 @@
 }
 
 .ground{
-	background-color: green;
+	background: url('../img/ground.png') no-repeat center 0;
 	position: absolute;
-	bottom: 0;
+	bottom: 10px;
 	left: 0;
 	width: 100%;
 	height: 20px
@@ -28,15 +35,60 @@
 .rocket{
 	position: absolute;
 	left: 50%;
-	bottom: 20px;
-	width: 20px;
-	height: 100px;
-	background-color: blue;
-	transition: bottom 100000ms
+	bottom: -15px;
+	width: 143px;
+	height: 272px;
+	margin-left: -71.5px;
+	background: url('../img/rocket-state1.png') no-repeat 0 0;
+	transition: bottom 10000ms
 }
 
-body.body-state1 .rocket{
-	transition: none; 
+.nervous {
+	position: absolute;
+	bottom: 220px;
+	left: 50%;
+	background: url('../img/nervous.png') no-repeat 0 0;
+	width: 223px;
+	height: 100px;
+	margin-left: -180px;
+	display: none;
+}
+
+.nervous.show {
+	display: block;
+}
+
+.cant-wait {
+	position: absolute;
+	bottom: 220px;
+	left: 50%;
+	background: url('../img/cant-wait.png') no-repeat 0 0;
+	width: 206px;
+	height: 65px;
+	display: none;
+}
+
+.cant-wait.show {
+	display: block;
+}
+
+/* rocket bg image */
+body.body-state2 .rocket{
+	background-image: url('../img/rocket-state2.gif');
+
+}
+
+body.body-state3 .rocket,
+body.body-state4 .rocket{
+	background-image: url('../img/rocket-state3.gif')
+}
+
+body.body-state5 .rocket{
+	background-image: url('../img/boom.png');
+	width: 209px;
+	height: 200px;
+	margin-left: -104.5px;
+	bottom: 300px
 }
 
 
@@ -57,10 +109,19 @@ body.body-state3 .state3{display: block;}
 body.body-state4 .state4{display: block;}
 body.body-state5 .state5{display: block;}
 
-a{
-
+a.button {
+	font-family: 'Pacifico', cursive;
+	text-decoration: none;
+	color: red;
+	font-size: xx-large;
 }
 
-a.button{
+a.button:hover {
+	color: yellow;
+	font-weight: bold;
+}
 
+h1 {
+	font-family: 'Julius Sans One', serif;
+	font-size: 350%
 }
